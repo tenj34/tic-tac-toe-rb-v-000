@@ -40,15 +40,19 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  boolCheck = false
+  boolCheck  = false
+
   while boolCheck == false
-    user_input = gets.strip
-    if valid_move?(board,user_input) == false
-      puts "Not a valid choice. Please try again"
+    input = gets.strip # convert the value
+    location = input_to_index(input) #converted to integer
+
+    if valid_move?(board,location) == false #value check forced entry
+      puts "Not a valid move. Please try again."
     else
-      boolCheck = true
-      move(board,user_input,current_player(board))
+      boolCheck = true #exit the loop
+      move(board,location,current_player(board))
       display_board(board)
+
     end
   end
 end

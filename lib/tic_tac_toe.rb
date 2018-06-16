@@ -100,16 +100,7 @@ def draw?(board)
 end
 
 def over?(board)
-  while won?(board)
-    if draw?(board) == true  || full?(board) == true
-      return true
-    elsif full?(board) == false
-      return true
-    end
-  end
-  if draw?(board) == true
-    return true
-  end
+  won?(board).class == Array || draw?(board) == true
 end
 
 def winner(board)
@@ -123,7 +114,7 @@ def winner(board)
 end
 
 def play(board)
-  while over?(board) == false
+  while over?(board) == false  
     turn(board)
   end
   if over?(board) == true
@@ -131,6 +122,6 @@ def play(board)
       puts "Congratulations #{winner(board)}"
     elsif draw?(board) == true
       puts "Cats Game!"
-  end
+    end
   end
 end

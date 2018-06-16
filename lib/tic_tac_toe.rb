@@ -86,7 +86,7 @@ end
 def won?(board)
   WIN_COMBINATIONS.each_with_index do |element,index|
     if position_taken?(board,element[0]) == true
-      if board[element[0]] == board[element[1]] && 
+      if board[element[0]] == board[element[1]] &&
         board[element[1]] == board[element[2]]
         return WIN_COMBINATIONS[index]
       end
@@ -99,7 +99,7 @@ end
 #Checks to see if there is no empty space on board
 def full?(board)
   board.all? do |index|
-    index == "X" || index == "O"  
+    index == "X" || index == "O"
   end
 end
 
@@ -132,7 +132,7 @@ def play(board)
     turn(board)
   end
   if won?(board).class == Array
-    puts "Congratulations #{winner(board)}"
+    puts "Congratulations #{winner?(board)}"
   elsif draw?(board) == true
     puts "Cats Game!"
   end

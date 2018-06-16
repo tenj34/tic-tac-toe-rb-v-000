@@ -103,7 +103,7 @@ def over?(board)
   won?(board).class == Array || draw?(board) == true
 end
 
-def winner(board)
+def winner?(board)
   win_char = nil
   if won?(board).class == Array
     win_char = board[won?(board)[0]]

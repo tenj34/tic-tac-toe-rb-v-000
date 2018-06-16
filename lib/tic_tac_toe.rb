@@ -39,6 +39,7 @@ def turn(board)
    end
  end
 end
-def move(array,index,value = "X" )
+
+def move(array,index,value)
   array[index] = value
 end

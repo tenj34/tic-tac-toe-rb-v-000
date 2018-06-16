@@ -114,18 +114,22 @@ end
 
 def winner(board)
   win_char = nil
-  if won?(board).class == Array
+  if !won?(board)
+    return nil
+  else
     win_char = board[won?(board)[0]]
   end
   return win_char
 end
+
+
 
 def play(board)
   while over?(board) == false
     turn(board)
   end
 
-  if won?(board) == Array
+  if won?(board) == true
     puts "Congratulations #{winner(board)}"
   elsif draw?(board) == true
     puts "Cats Game!"

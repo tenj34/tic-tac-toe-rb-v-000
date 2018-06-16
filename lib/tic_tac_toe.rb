@@ -52,7 +52,6 @@ def turn(board)
       boolCheck = true #exit the loop
       move(board,location,current_player(board))
       display_board(board)
-
     end
   end
 end

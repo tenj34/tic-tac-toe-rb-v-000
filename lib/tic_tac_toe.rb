@@ -105,9 +105,7 @@ end
 
 def winner(board)
   win_char = nil
-  if !won?(board)
-    return nil
-  else
+  if won?(board).class == Array
     win_char = board[won?(board)[0]]
   end
   return win_char

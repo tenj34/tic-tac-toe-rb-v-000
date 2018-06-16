@@ -100,24 +100,24 @@ def draw?(board)
 end
 
 def over?(board)
-  won?(board).class == Array || draw?(board) == true
+  while won?(board)
+    if draw?(board) == true  || full?(board) == true
+      return true
+    elsif full?(board) == false
+      return true
+    end
+  end
+  if draw?(board) == true
+    return true
+  end
 end
 
-def winner?(board)
+def winner(board)
   win_char = nil
-  if won?(board).class == Array
+  if !won?(board)
+    return nil
+  else
     win_char = board[won?(board)[0]]
   end
   return win_char
-end
-
-def play(board)
-  while over?(board) == false
-    turn(board)
-  end
-  if won?(board).class == Array
-    puts "Congratulations #{winner(board)}"
-  elsif draw?(board) == true
-    puts "Cats Game!"
-  end
 end

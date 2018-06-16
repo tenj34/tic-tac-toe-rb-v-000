@@ -50,7 +50,7 @@ def turn(board)
       puts "Not a valid move. Please try again."
     else
       boolCheck = true #exit the loop
-      move(board,location,)
+      move(board,location,value)
       display_board(board)
 
     end

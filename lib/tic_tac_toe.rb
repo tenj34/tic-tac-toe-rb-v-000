@@ -1,3 +1,4 @@
+
 WIN_COMBINATIONS = [[0,1,2],
   [3,4,5],
   [6,7,8],
@@ -70,8 +71,6 @@ def turn_count(board)
   return counter
 end
 
-#Takes board as argument
-#Determines current character of Player(X or O)
 def current_player(board)
   turn_num = turn_count(board)  1
   if turn_num.even? == true

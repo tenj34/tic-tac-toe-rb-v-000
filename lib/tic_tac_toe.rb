@@ -20,6 +20,7 @@ end
 def input_to_index(user_input)
  "#{user_input}".to_i - 1 #input converted to integer
 end
+
 def turn(board)
   puts "Please enter 1-9:"
   boolCheck  = false
@@ -37,4 +38,7 @@ def turn(board)
 
    end
  end
+end
+def move(array,index,value = "X" )
+  array[index] = value
 end

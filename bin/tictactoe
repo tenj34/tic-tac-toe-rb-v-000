@@ -2,3 +2,4 @@
 
 require_relative '../lib/tic_tac_toe'
 board = array.new(9," ")
+display_board(board)

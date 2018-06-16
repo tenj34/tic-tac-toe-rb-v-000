@@ -20,3 +20,21 @@ end
 def input_to_index(user_input)
  "#{user_input}".to_i - 1 #input converted to integer
 end
+def turn(board)
+  puts "Please enter 1-9:"
+  boolCheck  = false
+
+  while boolCheck == false
+    input = gets.strip # convert the value
+    location = input_to_index(input) #converted to integer
+
+    if valid_move?(board,location) == false #value check forced entry
+      puts "Not a valid move. Please try again."
+    else
+      boolCheck = true #exit the loop
+      move(board,location,)
+      display_board(board)
+
+   end
+ end
+end

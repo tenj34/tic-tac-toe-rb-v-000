@@ -88,3 +88,36 @@ def won?(board)
   end
   return false
 end
+
+def full?(board)
+  board.all? do |index|
+    index == "X" || index == "O"
+  end
+end
+
+def draw?(board)
+  won?(board) == false && full?(board)== true
+end
+
+def over?(board)
+  while won?(board)
+    if draw?(board) == true  || full?(board) == true
+      return true
+    elsif full?(board) == false
+      return true
+    end
+  end
+  if draw?(board) == true
+    return true
+  end
+end
+
+def winner(board)
+  win_char = nil
+  if !won?(board)
+    return nil
+  else
+    win_char = board[won?(board)[0]]
+  end
+  return win_char
+end

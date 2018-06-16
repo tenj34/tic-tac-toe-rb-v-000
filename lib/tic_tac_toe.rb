@@ -56,3 +56,18 @@ def valid_move?(board, index)
     false
   end
 end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  boolCheck = false
+  while boolCheck == false
+    user_input = gets.strip
+    if valid_move?(board,user_input) == false
+      puts "Not a valid choice. Please try again"
+    else
+      boolCheck = true
+      move(board,user_input,current_player(board))
+      display_board(board)
+    end
+  end
+end
